@@ -1,0 +1,245 @@
+/* =============================================================
+   STUDIO EIGENHEIMER — Colors & Type
+   The whole system is built from three colors and one type family.
+   ============================================================= */
+
+/* Webfonts ---------------------------------------------------- */
+/* Archivo (text) + Archivo Black (display) from Google Fonts.
+   Archivo Black is the closest free match to the heavy grotesque
+   used in the wordmark; Archivo provides the supporting weights.
+   See README → Caveats. */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap');
+
+:root {
+  /* ---- Core palette (exactly three) ---- */
+  --bone:   #F1ECE2;   /* Warm bone — page background */
+  --ink:    #0F0F0F;   /* Near-black ink — mark, type */
+  --signal: #D63A2F;   /* Signal red — single accent  */
+
+  /* ---- Semantic surface / foreground tokens ---- */
+  --bg:        var(--bone);
+  --bg-invert: var(--ink);
+  --fg:        var(--ink);
+  --fg-invert: var(--bone);
+  --fg-muted:  rgba(15, 15, 15, 0.62);   /* Ink @ 62% — body secondary */
+  --fg-faint:  rgba(15, 15, 15, 0.40);   /* Ink @ 40% — captions */
+  --rule:      rgba(15, 15, 15, 0.14);   /* Ink @ 14% — hairline rules */
+  --rule-strong: rgba(15, 15, 15, 0.32);
+  --accent:    var(--signal);
+  --accent-press: #B83025;               /* Ink-mixed darker red, press only */
+
+  /* On dark surfaces */
+  --fg-on-ink:        var(--bone);
+  --fg-on-ink-muted:  rgba(241, 236, 226, 0.62);
+  --rule-on-ink:      rgba(241, 236, 226, 0.18);
+
+  /* ---- Type families ---- */
+  --font-display: "Archivo Black", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-text:    "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* ---- Type scale (modular, 1.250 — major third) ---- */
+  --t-caption: 12px;
+  --t-small:   14px;
+  --t-body:    16px;
+  --t-lead:    20px;
+  --t-h4:      24px;
+  --t-h3:      32px;
+  --t-h2:      48px;
+  --t-h1:      72px;
+  --t-display: 120px;
+  --t-mega:    200px;
+
+  /* ---- Line heights ---- */
+  --lh-tight:  0.92;   /* display lock-ups */
+  --lh-snug:   1.05;   /* h1 / h2 */
+  --lh-normal: 1.35;   /* h3 / h4 / lead */
+  --lh-body:   1.55;   /* body text */
+  --lh-loose:  1.7;    /* long-form reading */
+
+  /* ---- Letter spacing ---- */
+  --tr-display: -0.025em;   /* tightened display */
+  --tr-heading: -0.015em;
+  --tr-body:     0;
+  --tr-eyebrow:  0.18em;    /* uppercase labels */
+  --tr-caps:     0.04em;
+
+  /* ---- Spacing (8pt rhythm, plus 4px half-step) ---- */
+  --s-0:  0;
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-5:  24px;
+  --s-6:  32px;
+  --s-7:  48px;
+  --s-8:  64px;
+  --s-9:  96px;
+  --s-10: 128px;
+  --s-11: 192px;
+
+  /* ---- Radii — restrained. We are mostly square. ---- */
+  --r-0: 0;
+  --r-1: 2px;
+  --r-2: 4px;
+  --r-card: 6px;        /* default card radius (matches mark on logo) */
+  --r-pill: 999px;
+
+  /* ---- Borders ---- */
+  --bw-hair:  1px;
+  --bw-rule:  1.5px;
+  --bw-bold:  2px;
+
+  /* ---- Motion ---- */
+  --ease-out:   cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:   120ms;
+  --dur-base:   200ms;
+  --dur-slow:   360ms;
+
+  /* ---- Shadow — almost never used. Only this one. ---- */
+  --shadow-lift: 0 1px 0 var(--rule), 0 12px 28px -16px rgba(15,15,15,0.18);
+
+  /* ---- Layout ---- */
+  --container:    1280px;
+  --container-tight: 880px;
+  --gutter:       32px;
+  --max-prose-ch: 68ch;
+}
+
+/* =============================================================
+   Base / element styles — semantic CSS that follows the tokens.
+   ============================================================= */
+
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-text);
+  font-size: var(--t-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Display lock-ups — wordmark style, lowercase, tight */
+.display, h1.display {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--t-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-display);
+  text-transform: lowercase;
+  color: var(--fg);
+  margin: 0;
+}
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--t-h1);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tr-display);
+  text-transform: lowercase;
+  margin: 0 0 var(--s-5);
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--t-h2);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tr-display);
+  text-transform: lowercase;
+  margin: 0 0 var(--s-4);
+}
+
+h3, .h3 {
+  font-family: var(--font-text);
+  font-weight: 700;
+  font-size: var(--t-h3);
+  line-height: var(--lh-normal);
+  letter-spacing: var(--tr-heading);
+  margin: 0 0 var(--s-3);
+}
+
+h4, .h4 {
+  font-family: var(--font-text);
+  font-weight: 600;
+  font-size: var(--t-h4);
+  line-height: var(--lh-normal);
+  letter-spacing: var(--tr-heading);
+  margin: 0 0 var(--s-3);
+}
+
+p {
+  font-family: var(--font-text);
+  font-size: var(--t-body);
+  line-height: var(--lh-body);
+  margin: 0 0 var(--s-4);
+  text-wrap: pretty;
+  max-width: var(--max-prose-ch);
+}
+
+.lead {
+  font-size: var(--t-lead);
+  line-height: var(--lh-normal);
+  color: var(--fg);
+}
+
+small, .caption {
+  font-size: var(--t-caption);
+  line-height: var(--lh-body);
+  color: var(--fg-muted);
+}
+
+/* Eyebrow — wide-tracked uppercase label. Heavy use across the system. */
+.eyebrow {
+  font-family: var(--font-text);
+  font-size: var(--t-caption);
+  font-weight: 600;
+  letter-spacing: var(--tr-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg);
+}
+
+.eyebrow--muted { color: var(--fg-muted); }
+.eyebrow--accent { color: var(--accent); }
+
+code, kbd, samp, pre {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+
+a {
+  color: var(--fg);
+  text-decoration: none;
+  border-bottom: var(--bw-hair) solid var(--fg);
+  transition: color var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out);
+}
+a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+a:active { color: var(--accent-press); }
+
+hr {
+  border: 0;
+  border-top: var(--bw-hair) solid var(--rule);
+  margin: var(--s-6) 0;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bone);
+}
+
+/* Signature red dot — referenced from the wordmark.
+   <span class="dot"></span> renders an 0.6em red dot baseline-aligned. */
+.dot {
+  display: inline-block;
+  width: 0.32em;
+  height: 0.32em;
+  background: var(--accent);
+  border-radius: 50%;
+  vertical-align: baseline;
+  margin-left: 0.02em;
+}
