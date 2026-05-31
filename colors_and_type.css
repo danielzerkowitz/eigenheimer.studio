@@ -1,5 +1,5 @@
 /* =============================================================
-   STUDIO EIGENHEIMER — Colors & Type
+   STUDIO EIGENHEIMER - Colors & Type
    The whole system is built from three colors and one type family.
    ============================================================= */
 
@@ -12,18 +12,18 @@
 
 :root {
   /* ---- Core palette (exactly three) ---- */
-  --bone:   #F1ECE2;   /* Warm bone — page background */
-  --ink:    #0F0F0F;   /* Near-black ink — mark, type */
-  --signal: #D63A2F;   /* Signal red — single accent  */
+  --bone:   #F1ECE2;   /* Warm bone - page background */
+  --ink:    #0F0F0F;   /* Near-black ink - mark, type */
+  --signal: #D63A2F;   /* Signal red - single accent  */
 
   /* ---- Semantic surface / foreground tokens ---- */
   --bg:        var(--bone);
   --bg-invert: var(--ink);
   --fg:        var(--ink);
   --fg-invert: var(--bone);
-  --fg-muted:  rgba(15, 15, 15, 0.62);   /* Ink @ 62% — body secondary */
-  --fg-faint:  rgba(15, 15, 15, 0.40);   /* Ink @ 40% — captions */
-  --rule:      rgba(15, 15, 15, 0.14);   /* Ink @ 14% — hairline rules */
+  --fg-muted:  rgba(15, 15, 15, 0.62);   /* Ink @ 62% - body secondary */
+  --fg-faint:  rgba(15, 15, 15, 0.40);   /* Ink @ 40% - captions */
+  --rule:      rgba(15, 15, 15, 0.14);   /* Ink @ 14% - hairline rules */
   --rule-strong: rgba(15, 15, 15, 0.32);
   --accent:    var(--signal);
   --accent-press: #B83025;               /* Ink-mixed darker red, press only */
@@ -38,7 +38,7 @@
   --font-text:    "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
-  /* ---- Type scale (modular, 1.250 — major third) ---- */
+  /* ---- Type scale (modular, 1.250 - major third) ---- */
   --t-caption: 12px;
   --t-small:   14px;
   --t-body:    16px;
@@ -78,7 +78,7 @@
   --s-10: 128px;
   --s-11: 192px;
 
-  /* ---- Radii — restrained. We are mostly square. ---- */
+  /* ---- Radii - restrained. We are mostly square. ---- */
   --r-0: 0;
   --r-1: 2px;
   --r-2: 4px;
@@ -97,7 +97,7 @@
   --dur-base:   200ms;
   --dur-slow:   360ms;
 
-  /* ---- Shadow — almost never used. Only this one. ---- */
+  /* ---- Shadow - almost never used. Only this one. ---- */
   --shadow-lift: 0 1px 0 var(--rule), 0 12px 28px -16px rgba(15,15,15,0.18);
 
   /* ---- Layout ---- */
@@ -108,7 +108,7 @@
 }
 
 /* =============================================================
-   Base / element styles — semantic CSS that follows the tokens.
+   Base / element styles - semantic CSS that follows the tokens.
    ============================================================= */
 
 html, body {
@@ -122,7 +122,7 @@ html, body {
   text-rendering: optimizeLegibility;
 }
 
-/* Display lock-ups — wordmark style, lowercase, tight */
+/* Display lock-ups - wordmark style, lowercase, tight */
 .display, h1.display {
   font-family: var(--font-display);
   font-weight: 900;
@@ -193,7 +193,7 @@ small, .caption {
   color: var(--fg-muted);
 }
 
-/* Eyebrow — wide-tracked uppercase label. Heavy use across the system. */
+/* Eyebrow - wide-tracked uppercase label. Heavy use across the system. */
 .eyebrow {
   font-family: var(--font-text);
   font-size: var(--t-caption);
@@ -232,7 +232,7 @@ hr {
   color: var(--bone);
 }
 
-/* Signature red dot — referenced from the wordmark.
+/* Signature red dot - referenced from the wordmark.
    <span class="dot"></span> renders an 0.6em red dot baseline-aligned. */
 .dot {
   display: inline-block;

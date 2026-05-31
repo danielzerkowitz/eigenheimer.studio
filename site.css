@@ -1,4 +1,4 @@
-/* Studio site — UI kit specific layout glue.
+/* Studio site - UI kit specific layout glue.
    All tokens come from ../../colors_and_type.css */
 
 * { box-sizing: border-box; }
@@ -16,7 +16,7 @@ html, body { margin: 0; padding: 0; background: var(--bone); }
   padding: 0 var(--gutter);
 }
 
-/* Image placeholders — diagonal hatch */
+/* Image placeholders - diagonal hatch */
 .img-ph {
   background:
     repeating-linear-gradient(

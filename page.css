@@ -1,8 +1,8 @@
-/* Studio Eigenheimer — Podcast site page-specific styles.
+/* Studio Eigenheimer - Podcast site page-specific styles.
    Tokens come from colors_and_type.css. Layout glue from site.css. */
 
 :root {
-  /* Section vertical rhythm — tweakable via JS by switching --density */
+  /* Section vertical rhythm - tweakable via JS by switching --density */
   --section-pad: clamp(64px, 9vw, 128px);
   --section-pad-tight: clamp(48px, 6vw, 80px);
 }
@@ -15,7 +15,7 @@
 html, body { background: var(--bone); }
 body { overflow-x: hidden; }
 
-/* The brand red dot — used in wordmarks and after every display lockup.
+/* The brand red dot - used in wordmarks and after every display lockup.
    Size is contextually overridden below; this is the default. */
 .red-dot {
   display: inline-block;
@@ -166,8 +166,8 @@ body { overflow-x: hidden; }
 .hero-headline {
   font-family: var(--font-display);
   font-weight: 900;
-  font-size: clamp(44px, 8.5vw, 128px);
-  line-height: 0.92;
+  font-size: clamp(32px, 5.5vw, 80px);
+  line-height: 0.95;
   letter-spacing: -0.025em;
   text-transform: lowercase;
   color: var(--ink);
@@ -175,7 +175,7 @@ body { overflow-x: hidden; }
   text-wrap: balance;
 }
 .hero-headline .num {
-  /* Numbers within the headline — keep the same family but no transform */
+  /* Numbers within the headline - keep the same family but no transform */
   font-variant-numeric: lining-nums;
 }
 .hero-headline .red-dot {
@@ -325,7 +325,7 @@ body { overflow-x: hidden; }
   .whofor { grid-template-columns: 1fr; gap: 40px; }
 }
 
-/* ── What you get — cascade ───────────────────────────────── */
+/* ── What you get - cascade ───────────────────────────────── */
 .cascade {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -446,7 +446,7 @@ body { overflow-x: hidden; }
   .deliverable .qty { grid-column: 2; padding-top: 4px; }
 }
 
-/* ── How it works — process ───────────────────────────────── */
+/* ── How it works - process ───────────────────────────────── */
 .process {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -498,7 +498,7 @@ body { overflow-x: hidden; }
   .process .step:last-child { border-bottom: 0; }
 }
 
-/* ── Why — three differentiators ─────────────────────────── */
+/* ── Why - three differentiators ─────────────────────────── */
 .diff {
   display: flex;
   flex-direction: column;
@@ -550,7 +550,7 @@ body { overflow-x: hidden; }
   }
 }
 
-/* ── Proof — quote ───────────────────────────────────────── */
+/* ── Proof - quote ───────────────────────────────────────── */
 .proof {
   display: grid;
   grid-template-columns: 1fr;
@@ -697,7 +697,7 @@ body { overflow-x: hidden; }
   text-wrap: pretty;
 }
 .pricing .card li::before {
-  content: "—";
+  content: "-";
   position: absolute;
   left: 0;
   top: 0;
