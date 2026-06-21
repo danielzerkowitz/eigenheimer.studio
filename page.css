@@ -276,16 +276,17 @@ body { overflow-x: hidden; }
   gap: 10px;
   white-space: nowrap;
   transition: background var(--dur-fast) var(--ease-out),
-              border-color var(--dur-fast) var(--ease-out);
+              border-color var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out);
 }
-.btn-cta:hover { background: var(--signal); border-color: var(--signal); }
-.btn-cta:active { background: var(--accent-press); border-color: var(--accent-press); }
+.btn-cta:hover { background: var(--signal); border-color: var(--signal); color: #fff; }
+.btn-cta:active { background: var(--accent-press); border-color: var(--accent-press); color: #fff; }
 .btn-cta--ghost {
   background: transparent;
   color: var(--ink);
   border-color: var(--ink);
 }
-.btn-cta--ghost:hover { color: var(--bone); }
+.btn-cta--ghost:hover { color: #fff; }
 
 /* ── Who-for two-column ───────────────────────────────────── */
 .whofor {
