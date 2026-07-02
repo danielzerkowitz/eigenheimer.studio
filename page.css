@@ -88,9 +88,33 @@ body { overflow-x: hidden; }
 }
 .header-cta:hover { color: var(--signal); border-bottom-color: var(--signal); }
 
+.header-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 28px;
+}
+.header-link {
+  font-family: var(--font-text);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fg-muted);
+  border: 0;
+  text-decoration: none;
+  padding: 4px 0;
+  white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.header-link:hover { color: var(--signal); }
+
 @media (max-width: 720px) {
   .site-header__inner { padding: 14px 20px; }
   .wordmark { font-size: 18px; }
+  .header-nav { gap: 18px; }
+}
+/* Narrow phones: header can't fit three items; the cross-audience
+   link stays reachable via the hero fork and the footer. */
+@media (max-width: 460px) {
+  .header-link { display: none; }
 }
 
 /* ── Section eyebrow row ───────────────────────────────────── */
@@ -209,6 +233,22 @@ body { overflow-x: hidden; }
   align-items: flex-start;
   gap: 18px;
 }
+.hero-fork {
+  font-family: var(--font-text);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--fg-muted);
+  margin: 0;
+}
+.hero-fork a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--ink);
+  padding-bottom: 1px;
+  font-weight: 500;
+  transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+.hero-fork a:hover { color: var(--signal); border-bottom-color: var(--signal); }
 
 @media (max-width: 720px) {
   .hero-foot {
