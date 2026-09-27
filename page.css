@@ -87,7 +87,7 @@ a:hover { color: var(--accent-press); }
   transition: transform var(--dur-base) var(--ease-out);
 }
 .hero-headline .red-dot,
-.door .head .red-dot,
+.door .head .red-dot, .about-name .red-dot,
 .whofor h2 .red-dot, .whofor h3 .red-dot,
 .cascade-ratio .twenty .red-dot,
 .final h2 .red-dot,
@@ -838,6 +838,54 @@ a:hover { color: var(--accent-press); }
   .door:last-child { border-bottom: 0; }
   .door .links { padding-top: 16px; }
   .door, .door:hover, .door:active { border-color: var(--rule); }
+}
+
+/* ── About - the one person behind the studio ─────────────── */
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--s-7);
+  align-items: end;
+}
+.about-photo {
+  margin: 0;
+  aspect-ratio: 4 / 5;
+  background: var(--rule);
+  overflow: hidden;
+}
+.about-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-name {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(34px, 3.4vw, 52px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0 0 var(--s-5);
+}
+.about-lead {
+  font-size: clamp(17px, 1.5vw, 21px);
+  line-height: 1.45;
+  color: var(--ink);
+  max-width: 44ch;
+  margin: 0 0 var(--s-4);
+}
+.about-body {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--fg-muted);
+  max-width: 52ch;
+  margin: 0 0 var(--s-5);
+  text-wrap: pretty;
+}
+@media (max-width: 720px) {
+  .about { grid-template-columns: 1fr; gap: var(--s-6); }
+  .about-photo { max-width: 360px; }
 }
 
 /* ── Why - three differentiators ─────────────────────────── */
